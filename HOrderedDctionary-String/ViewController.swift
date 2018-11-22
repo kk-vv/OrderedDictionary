@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         let dicA:Dictionary<String,Any> = ["A":Int(1),"E":"5","D":Double(4.25),"B":"2","C":"3"]
         let sortedA = dicA.sorted { $0.0 < $1.0}
+        print("1 level Test")
         print("System Sorted:")
         print(sortedA.description )
         print("Dicitonary Ordered String:")
@@ -24,56 +25,45 @@ class ViewController: UIViewController {
         print(dicA.zx_sortJsonString())//支持嵌套
         
         
+        
         let array:Array<Any> = ["B",Double(3.1),"3","C",Int(2),"A",Int(1),dicA]
         print("Array Ordered String:")
         print(array.zx_sortJsonString())
+        print("❤️ Final Version ❤️")
         print("Mix Dicitonary Ordered String:")
         let userInfo:Dictionary<String,Any> = ["B":["222","vccc","333","111","ggg"],
-                                                "D":"4",
-                                                "C":["A":"1","E":"5","D":"4","B":"2","C":"3"],
-                                                "A":"1",
-                                                "E":"5",
-                                                "G":["BString",
-                                                     "3",
-                                                     "CString",
-                                                     Int(2),
-                                                     "AString",
-                                                     Int(1),
-                                                     ["name":"JuanFelix",
-                                                      "tel":"18081000000",
-                                                      "sex":Int(1),
-                                                      "image":"/upload/image/1.png"],
-                                                     ["name":"Tom",
-                                                      "sex":Int(1),
-                                                      "image":"/upload/image/3.png",                                              "tel":"18081000001"],
-                                                     ["tel":"18081000002",
-                                                      "image":"/upload/image/2.png",
-                                                      "name":"Lily",
-                                                      "sex":Int(0)],
-                                                     ["tel":"18081000003",
-                                                      "sex":Int(0),
-                                                      "image":"/upload/image/7.png",
-                                                      "name":"Judy"],
-                                                     ["image":"/upload/image/4.png",
-                                                      "sex":Int(0),
-                                                      "name":"Mary",
-                                                      "tel":"18081000004"],
-                                                     ["sex":Int(0),
-                                                      "tel":"18081000005",
-                                                      "name":"Phenix",
-                                                      "image":"/upload/image/5.png"]
-                                                     ],
-                                                "F":"6"]
-        print(userInfo.zx_sortJsonString())
+                                               "D":"4",
+                                               "C":["A":"1","E":"5","D":"4","B":"2","C":"3"],
+                                               "A":"1",
+                                               "E":"5",
+                                               "G":["BString",
+                                                    "3",
+                                                    "CString",
+                                                    Int(2),
+                                                    "AString",
+                                                    Int(1),
+                                                    ["name":"JuanFelix",
+                                                     "tel":"18081000000",
+                                                     "sex":Int(1),
+                                                     "image":"/upload/image/1.png"],
+                                                    ["name":"Tom",
+                                                     "sex":Int(1),
+                                                     "image":"/upload/image/3.png",                                              "tel":"18081000001"],
+                                                    ["tel":"18081000002",
+                                                     "image":"/upload/image/2.png",
+                                                     "name":"Lily",
+                                                     "sex":Int(0)],                                                     ],
+                                               "F":"6"]
+        print(userInfo.zx_sortJsonString())//Use This
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
-extension Dictionary {//测试
+extension Dictionary {//测试 - 1 level Test
     func zx_TestAlv1() -> String {//先获取key值排序，再取值拼接为JsonString
         var tempDic = self as! Dictionary<String,Any>
         var keys = Array<String>()

@@ -21,12 +21,10 @@ extension Dictionary {
         for key in keys {
             let value = tempDic[key]
             if let value = value as? Dictionary<String,Any> {
-                //arr.append("\"\(key)\":\"\(value.zx_sortJsonString())\"")不需要引号
                 arr.append("\"\(key)\":\(value.zx_sortJsonString())")
-            }else if let value = value as? Array<Any> {
-                //arr.append("\"\(key)\":\"\(value.zx_sortJsonString())\"")
+            } else if let value = value as? Array<Any> {
                 arr.append("\"\(key)\":\(value.zx_sortJsonString())")
-            }else{
+            } else {
                 arr.append("\"\(key)\":\"\(tempDic[key]!)\"")
             }
         }
@@ -44,9 +42,9 @@ extension Array {
         for value in array {
             if let value = value as? Dictionary<String,Any> {
                 arr.append(value.zx_sortJsonString())
-            }else if let value = value as? Array<Any> {
+            } else if let value = value as? Array<Any> {
                 arr.append(value.zx_sortJsonString())
-            }else{
+            } else {
                 arr.append("\"\(value)\"")
             }
         }
